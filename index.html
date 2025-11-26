@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ResourceVault VN</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class', // Enable manual dark mode toggling
+        theme: {
+          extend: {
+            colors: {
+              primary: '#3b82f6',
+              secondary: '#64748b',
+              danger: '#ef4444',
+              success: '#22c55e',
+              // Dark mode specific background
+              dark: {
+                  bg: '#0f172a',
+                  surface: '#1e293b',
+                  border: '#334155'
+              }
+            },
+            animation: {
+                'fade-in': 'fadeIn 0.5s ease-out',
+                'scale-in': 'scaleIn 0.3s ease-out',
+            },
+            keyframes: {
+                fadeIn: {
+                    '0%': { opacity: '0', transform: 'translateY(10px)' },
+                    '100%': { opacity: '1', transform: 'translateY(0)' },
+                },
+                scaleIn: {
+                    '0%': { opacity: '0', transform: 'scale(0.95)' },
+                    '100%': { opacity: '1', transform: 'scale(1)' },
+                }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+<style>
+    /* Custom Scrollbar for better look in Dark Mode */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+    }
+    .dark ::-webkit-scrollbar-thumb {
+        background: #475569;
+    }
+    .dark ::-webkit-scrollbar-thumb:hover {
+        background: #64748b;
+    }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 text-slate-800 font-sans antialiased dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
